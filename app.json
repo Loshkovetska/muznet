@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "muznet",
-    "slug": "muznet",
+    "name": "muzNet",
+    "slug": "muzNet",
+    "scheme": "muznet",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/splash.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -14,20 +15,115 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "facebookAppId": "889533882178143",
+    "facebookDisplayName": "MuzNet",
+    "facebookAutoLogAppEventsEnabled": false,
+    "facebookAutoInitEnabled": false,
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "2.0.33",
+      "usesIcloudStorage": true,
+      "supportsTablet": false,
+      "config": {
+        "googleMapsApiKey": "AIzaSyC4Bz4gPVFvWHXExjRh6Et-hZZSaD9P_WY"
+      },
+      "infoPlist": {
+        "com.apple.developer.storekit.external-purchase":true, 
+        "com.apple.developer.in-app-payments": "merchant.com.muzNet",
+        "com.apple.developer.pass-type-identifiers": "merchant.com.muzNet",
+        "LSApplicationQueriesSchemes": [
+          "message",
+          "readdle-spark",
+          "airmail",
+          "ms-outlook",
+          "googlegmail",
+          "inbox-gmail",
+          "ymail",
+          "superhuman",
+          "yandexmail",
+          "fastmail",
+          "protonmail"
+        ],
+        "NSCameraUsageDescription": "This app uses the camera to take photos for users profile, their posts",
+        "NSLocationUsageDescription": "This app uses your location to show vendors' or musicians' cards which are near by you",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show vendors' or musicians' cards which are near by you",
+        "NSPhotoLibraryUsageDescription": "This app uses you photo library to make choosing photos for your future post in easier way",
+        "NSDocumentsFolderUsageDescription": "This app uses the documents folder to get necessary files for sharing",
+        "NSDownloadsFolderUsageDescription": "This app uses the downloads folder to get necessary files for sharing",
+        "NSFileProviderDomainUsageDescription": "This app uses the file provider to get necessary files for sharing",
+        "NSIdentityUsageDescription": "This app uses the wallet to make payments via app"
+      },
+      "bundleIdentifier": "com.ana2611.muzNet"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/splash.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAI827wqpr01_zPLjdwZ5J4cvdQrY1O9zQ"
+        }
+      },
+      "versionCode": 4,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "package": "com.ana2611.muzNet"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "react-native-email-link",
+      "expo-apple-authentication",
+      "expo-document-picker",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow MuzNet to access your photos. By clicking on it, you agree to our Terms of Service and acknowledge that our Privacy Policy applies to you"
+        }
+      ],
+      "expo-apple-authentication",
+
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/splash.png",
+          "color": "#FF0000",
+          "mode": "production"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow MuzNet to use your location. By clicking on it, you agree to our Terms of Service and acknowledge that our Privacy Policy applies to you",
+          "locationAlwaysPermission": "Allow MuzNet to use your location. By clicking on it, you agree to our Terms of Service and acknowledge that our Privacy Policy applies to you",
+          "isIosBackgroundLocationEnabled": "Allow MuzNet to use your location. By clicking on it, you agree to our Terms of Service and acknowledge that our Privacy Policy applies to you"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow MuzNet to access your photos. By clicking on it, you agree to our Terms of Service and acknowledge that our Privacy Policy applies to you",
+          "isAccessMediaLocationEnabled": "true"
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.muzNet",
+          "enableGooglePay": true
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "30556c89-f671-4c77-963d-90bc9e4e2503"
+      },
+      "facebook-client-id": "889533882178143"
     }
   }
 }
